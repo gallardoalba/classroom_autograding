@@ -11452,7 +11452,7 @@ exports.runAll = async (tests, cwd) => {
     // Restart command processing
     if (failed) {
         log('')
-        log(color.yellow('If you have any doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
+        log(color.yellow('If you have doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
     }
     else {
         log('')
