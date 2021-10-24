@@ -11423,6 +11423,16 @@ exports.runAll = async (tests, cwd) => {
     // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
     const token = uuid_1.v4();
     let failed = false;
+    log('')
+    log('\t    ____    _           _            __                                      _     _                  ___ ')
+    log('\t   | __ )  (_)   ___   (_)  _ __    / _|   ___    _ __   _ __ ___     __ _  | |_  (_)   ___   ___    |_ _|')
+    log('\t   |  _ \  | |  / _ \  | | | '_ \  | |_   / _ \  | '__| | '_ ` _ \   / _` | | __| | |  / __| / __|    | | ')
+    log('\t   | |_) | | | | (_) | | | | | | | |  _| | (_) | | |    | | | | | | | (_| | | |_  | | | (__  \__ \    | | ')
+    log('\t   |____/  |_|  \___/  |_| |_| |_| |_|    \___/  |_|    |_| |_| |_|  \__,_|  \__| |_|  \___| |___/   |___|')
+    log('')
+                                                                                                        
+    log(color.white('\tAlbert-Ludwigs-Universität Freiburg'))
+    log(color.white('\tAlbert-Ludwigs-Universität Freiburg'))
     for (const test of tests) {
         try {
             if (test.points) {
