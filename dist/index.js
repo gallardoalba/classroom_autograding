@@ -11319,7 +11319,7 @@ const waitForExit = async (child, timeout) => {
                 resolve(undefined);
             }
             else {
-                reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
+                //reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
             }
         });
         child.once('error', (error) => {
