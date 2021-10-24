@@ -7682,7 +7682,7 @@ exports.addPath = addPath;
 function getInput(name, options) {
     const val = process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] || '';
     if (options && options.required && !val) {
-        throw new Error(`Input required and not supplied: ${name}`);
+        throw new Error('Input required and not supplied: ${name}');
     }
     return val.trim();
 }
@@ -11283,7 +11283,7 @@ class TestTimeoutError extends TestError {
 exports.TestTimeoutError = TestTimeoutError;
 class TestOutputError extends TestError {
     constructor(message, expected, actual) {
-        super(`${message}\nExpected:\n${expected}\nActual:\n${actual}`);
+        super('${message} Expected: ${expected} Actual: ${actual}');
         this.expected = expected;
         this.actual = actual;
         Error.captureStackTrace(this, TestOutputError);
@@ -11319,7 +11319,7 @@ const waitForExit = async (child, timeout) => {
                 resolve(undefined);
             }
             else {
-                reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
+                reject(new TestError('Error: Exit with code: ${code} and signal: ${signal}'));
             }
         });
         child.once('error', (error) => {
@@ -11388,19 +11388,19 @@ const runCommand = async (test, cwd, timeout) => {
     switch (test.comparison) {
         case 'exact':
             if (actual != expected) {
-                throw new TestOutputError(`The output for test ${test.name} did not match`, expected, actual);
+                throw new TestOutputError('The output for test ${test.name} did not match', expected, actual);
             }
             break;
         case 'regex':
             // Note: do not use expected here
             if (!actual.match(new RegExp(test.output || ''))) {
-                throw new TestOutputError(`The output for test ${test.name} did not match`, test.output || '', actual);
+                throw new TestOutputError('The output for test ${test.name} did not match', test.output || '', actual);
             }
             break;
         default:
             // The default comparison mode is 'included'
             if (!actual.includes(expected)) {
-                throw new TestOutputError(`The output for test ${test.name} did not match`, expected, actual);
+                throw new TestOutputError('The output for test ${test.name} did not match', expected, actual);
             }
             break;
     }
@@ -26049,7 +26049,7 @@ const run = async () => {
     catch (error) {
         // If there is any error we'll fail the action with the error message
         console.error(error.message);
-        core.setFailed(`Autograding failure: ${error}`);
+        core.setFailed('Autograding failure: ${error}');
     }
 };
 // Don't auto-execute in the test environment

@@ -40,7 +40,7 @@ export class TestOutputError extends TestError {
   actual: string
 
   constructor(message: string, expected: string, actual: string) {
-    super(`${message}\nExpected:\n${expected}\nActual:\n${actual}`)
+    super('${message} Expected: ${expected} Actual: ${actual}')
     this.expected = expected
     this.actual = actual
 
@@ -204,7 +204,7 @@ export const runAll = async (tests: Array<Test>, cwd: string): Promise<void> => 
   // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
   const token = uuidv4()
   log('')
-  log(`::stop-commands::${token}`)
+  log('::stop-commands::${token}')
   log('')
 
   let failed = false
@@ -215,26 +215,26 @@ export const runAll = async (tests: Array<Test>, cwd: string): Promise<void> => 
         hasPoints = true
         availablePoints += test.points
       }
-      log(color.cyan(`[x] ${test.name}`))
+      log(color.cyan('[x] ${test.name}'))
       log('')
       await run(test, cwd)
       log('')
-      log(color.green(`[x] ${test.name}`))
-      log(``)
+      log(color.green('[x] ${test.name}'))
+      log('')
       if (test.points) {
         points += test.points
       }
     } catch (error) {
       failed = true
       log('')
-      log(color.red(`[x] ${test.name}`))
+      log(color.red('[x] ${test.name}'))
       core.setFailed(error.message)
     }
   }
 
   // Restart command processing
   log('')
-  log(`::${token}::`)
+  log('::${token}::')
 
   if (failed) {
     // We need a good failure experience
