@@ -11319,7 +11319,7 @@ const waitForExit = async (child, timeout) => {
                 resolve(undefined);
             }
             else {
-                reject(new TestError('Error: Exit with code: ${code} and signal: ${signal}'));
+                reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
             }
         });
         child.once('error', (error) => {
@@ -11388,19 +11388,19 @@ const runCommand = async (test, cwd, timeout) => {
     switch (test.comparison) {
         case 'exact':
             if (actual != expected) {
-                throw new TestOutputError('The output for test ${test.name} did not match', expected, actual);
+                throw new TestOutputError(`The output for test ${test.name} did not match`, expected, actual);
             }
             break;
         case 'regex':
             // Note: do not use expected here
             if (!actual.match(new RegExp(test.output || ''))) {
-                throw new TestOutputError('The output for test ${test.name} did not match', test.output || '', actual);
+                throw new TestOutputError(`The output for test ${test.name} did not match`, test.output || '', actual);
             }
             break;
         default:
             // The default comparison mode is 'included'
             if (!actual.includes(expected)) {
-                throw new TestOutputError('The output for test ${test.name} did not match', expected, actual);
+                throw new TestOutputError(`The output for test ${test.name} did not match`, expected, actual);
             }
             break;
     }
@@ -11422,7 +11422,6 @@ exports.runAll = async (tests, cwd) => {
     // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
     const token = uuid_1.v4();
     log('');
-    log(`::stop-commands::${token}`);
     log('');
     let failed = false;
     for (const test of tests) {
@@ -11450,7 +11449,6 @@ exports.runAll = async (tests, cwd) => {
     }
     // Restart command processing
     log('');
-    log(`::${token}::`);
     if (failed) {
         // We need a good failure experience
     }
