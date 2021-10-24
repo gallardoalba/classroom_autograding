@@ -11445,7 +11445,7 @@ exports.runAll = async (tests, cwd) => {
         }
         catch (error) {
             failed = true;
-            log(color.red(`[-] Fehler]`));
+            log(color.red(`[-] Fehler`));
             core.setFailed(error.message);
         }
     }
