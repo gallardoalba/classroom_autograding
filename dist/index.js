@@ -11469,7 +11469,7 @@ exports.runAll = async (tests, cwd) => {
     log("")
     log(color.italig.yellow("The dogmatist within is always worse than the enemy without."))
     log(color.yellow("\t-- Stephen Jay-Gould (September 10, 1941 – May 20, 2002)"))
-    log"")
+    log("")
 };
 
 
