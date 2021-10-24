@@ -11438,14 +11438,14 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log(color.green(`[+] Correct result`));
+            log(color.green(`[+] Correct!`));
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log(color.red(`[-] Incorrect result`));
+            log(color.red(`[-] Incorrect`));
             core.setFailed(error.message);
         }
     }
@@ -11456,7 +11456,7 @@ exports.runAll = async (tests, cwd) => {
     }
     else {
         log('');
-        log(color.bold.yellow('All tests passed, congratulations!'));
+        log(color.bold.yellow('[o] All tests passed, congratulations!'));
     }
     // Set the number of points
     if (hasPoints) {
@@ -11466,6 +11466,10 @@ exports.runAll = async (tests, cwd) => {
         core.setOutput('Points', `${points}/${availablePoints}`);
         await output_1.setCheckRunOutput(text);
     }
+    log("")
+    log(color.italig.yellow("The dogmatist within is always worse than the enemy without."))
+    log(color.yellow("\t-- Stephen Jay-Gould (September 10, 1941 – May 20, 2002)"))
+    log"")
 };
 
 
