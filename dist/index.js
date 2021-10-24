@@ -11422,7 +11422,7 @@ exports.runAll = async (tests, cwd) => {
     // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
     const token = uuid_1.v4();
     log('');
-    log(`::stop-commands::${token}`);
+    log('::stop-commands::${token}');
     log('');
     let failed = false;
     for (const test of tests) {
@@ -11431,12 +11431,12 @@ exports.runAll = async (tests, cwd) => {
                 hasPoints = true;
                 availablePoints += test.points;
             }
-            log(color.cyan(`[x] ${test.name}`));
+            log(color.cyan('[x] ${test.name}'));
             log('');
             await exports.run(test, cwd);
             log('');
-            log(color.green(`[x] ${test.name}`));
-            log(``);
+            log(color.green('[x] ${test.name}'));
+            log('');
             if (test.points) {
                 points += test.points;
             }
@@ -11444,13 +11444,13 @@ exports.runAll = async (tests, cwd) => {
         catch (error) {
             failed = true;
             log('');
-            log(color.red(`[x] ${test.name}`));
+            log(color.red('[x] ${test.name}'));
             core.setFailed(error.message);
         }
     }
     // Restart command processing
     log('');
-    log(`::${token}::`);
+    log('::${token}::');
     if (failed) {
         // We need a good failure experience
     }
