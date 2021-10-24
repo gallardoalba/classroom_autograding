@@ -11344,11 +11344,11 @@ const runSetup = async (test, cwd, timeout) => {
         },
     });
     // Start with a single new line
-    process.stdout.write(indent('\n'));
+    //process.stdout.write(indent('\n'));
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    setup.stdout.on('data', chunk => {
-        process.stdout.write(indent(chunk));
-    });
+    //setup.stdout.on('data', chunk => {
+    //    process.stdout.write(indent(chunk));
+    //});
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setup.stderr.on('data', chunk => {
         process.stderr.write(indent(chunk));
