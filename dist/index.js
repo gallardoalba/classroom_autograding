@@ -11425,11 +11425,11 @@ exports.runAll = async (tests, cwd) => {
     let failed = false;
     log('')
     log(color.yellow('WS 2021/2022'))
-    log(color.yellow('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ +-+'))
-    log(color.yellow('|B|i|o|i|n|f|o|r|m|a|t|i|c|s| |1|'))
-    log(color.yellow('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ +-+'))
+    log(color.yellow('Bionformatics I'))
     log(color.yellow('Albert-Ludwigs-Universität Freiburg'))
-    log(color.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik - http://www.bioinf.uni-freiburg.de'))
+    log(color.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'))
+    log('')
+    
     for (const test of tests) {
         try {
             if (test.points) {
@@ -11438,28 +11438,29 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log(color.green(`[x] ${test.name}`));
+            log(color.green(`[+] Correct`));
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log(color.red(`[x] ${test.name}`));
+            log(color.red(`[-] Failed`));
             core.setFailed(error.message);
         }
     }
     // Restart command processing
     if (failed) {
-        // We need a good failure experience
+        log(color.green('It seems that you need to study a bit more.'));
+        log(color.yellow('If you have any doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
     }
     else {
-        log(color.green('All tests passed'));
-        log('Congratulations motherfucker!');
+        log(color.green('All tests passed, congratulations!'));
     }
     // Set the number of points
     if (hasPoints) {
         const text = `Points ${points}/${availablePoints}`;
+        log('')
         log(color.bold.bgCyan.black(text));
         core.setOutput('Points', `${points}/${availablePoints}`);
         await output_1.setCheckRunOutput(text);
