@@ -11424,7 +11424,7 @@ exports.runAll = async (tests, cwd) => {
     const token = uuid_1.v4();
     let failed = false;
     log('')
-    log(color.bold.yellow('WS 2021/2022'))
+    log(color.yellow('WS 2021/2022'))
     log(color.bold.yellow('Bionformatics I'))
     log(color.bold.yellow('Albert-Ludwigs-Universität Freiburg'))
     log(color.bold.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'))
@@ -11461,7 +11461,7 @@ exports.runAll = async (tests, cwd) => {
     }
     // Set the number of points
     if (hasPoints) {
-        const text = `Points ${points}/${availablePoints}`;
+        const text = `\tFinal grade: ${points}/${availablePoints}\t`;
         log('')
         log(color.bold.bgWhite.black(text));
         core.setOutput('Points', `${points}/${availablePoints}`);
