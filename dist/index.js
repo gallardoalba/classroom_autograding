@@ -11431,6 +11431,7 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
+            log('');
             log(color.green(`[x] ${test.name}`));
             if (test.points) {
                 points += test.points;
