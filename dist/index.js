@@ -11320,6 +11320,7 @@ const waitForExit = async (child, timeout) => {
             }
             else {
                 //reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
+                reject('You failed some tests!'));
             }
         });
         child.once('error', (error) => {
@@ -11421,8 +11422,6 @@ exports.runAll = async (tests, cwd) => {
     let hasPoints = false;
     // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
     const token = uuid_1.v4();
-    log('');
-    log('');
     let failed = false;
     for (const test of tests) {
         try {
@@ -11431,33 +11430,25 @@ exports.runAll = async (tests, cwd) => {
                 availablePoints += test.points;
             }
             log(color.cyan(`[x] ${test.name}`));
-            log('');
             await exports.run(test, cwd);
-            log('');
             log(color.green(`[x] ${test.name}`));
-            log('');
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log('');
             log(color.red(`[x] ${test.name}`));
             core.setFailed(error.message);
         }
     }
     // Restart command processing
-    log('');
     if (failed) {
         // We need a good failure experience
     }
     else {
-        log('');
         log(color.green('All tests passed'));
-        log('');
         log('Congratulations motherfucker!');
-        log('');
     }
     // Set the number of points
     if (hasPoints) {
