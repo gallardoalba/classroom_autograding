@@ -11424,20 +11424,12 @@ exports.runAll = async (tests, cwd) => {
     const token = uuid_1.v4();
     let failed = false;
     log('')
-    log('WS 2021/2022')
-    log('')
-    log('888888b.   d8b          d8b           .d888                                        888    d8b                         d888   ')
-    log('888  "88b  Y8P          Y8P          d88P"                                         888    Y8P                        d8888   ')
-    log('888  .88P                            888                                           888                                 888   ')
-    log('8888888K.  888  .d88b.  888 88888b.  888888 .d88b.  888d888 88888b.d88b.   8888b.  888888 888  .d8888b .d8888b         888   ')
-    log('888  "Y88b 888 d88""88b 888 888 "88b 888   d88""88b 888P"   888 "888 "88b     "88b 888    888 d88P"    88K             888   ')
-    log('888    888 888 888  888 888 888  888 888   888  888 888     888  888  888 .d888888 888    888 888      "Y8888b.        888   ')
-    log('888   d88P 888 Y88..88P 888 888  888 888   Y88..88P 888     888  888  888 888  888 Y88b.  888 Y88b.         X88        888   ')
-    log('8888888P"  888  "Y88P"  888 888  888 888    "Y88P"  888     888  888  888 "Y888888  "Y888 888  "Y8888P  88888P       8888888 ')
-    log('')
-                                                                                                        
-    log(color.white('Albert-Ludwigs-Universität Freiburg'))
-    log(color.white('Lehrstuhl für Bioinformatik - Institut für Informatik - http://www.bioinf.uni-freiburg.de'))
+    log(color.yellow('WS 2021/2022'))
+    log(color.yellow('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ +-+'))
+    log(color.yellow('|B|i|o|i|n|f|o|r|m|a|t|i|c|s| |1|'))
+    log(color.yellow('+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ +-+'))
+    log(color.yellow('Albert-Ludwigs-Universität Freiburg'))
+    log(color.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik - http://www.bioinf.uni-freiburg.de'))
     for (const test of tests) {
         try {
             if (test.points) {
