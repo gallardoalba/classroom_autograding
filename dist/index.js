@@ -11438,21 +11438,20 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log(color.green(`[+] Correct`));
+            log(color.green(`[+] Correct result`));
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log(color.red(`[-] Failed`));
+            log(color.red(`[-] Incorrect result`));
             core.setFailed(error.message);
         }
     }
     // Restart command processing
     if (failed) {
         log('')
-        log(color.yellow('It seems that you need to study a bit more.'));
         log(color.yellow('If you have any doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
     }
     else {
