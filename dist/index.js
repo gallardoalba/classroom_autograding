@@ -11423,12 +11423,12 @@ exports.runAll = async (tests, cwd) => {
     // https://help.github.com/en/actions/reference/development-tools-for-github-actions#stop-and-start-log-commands-stop-commands
     const token = uuid_1.v4();
     let failed = false;
-    log('')
-    log(color.yellow('WS 2021/2022'))
-    log(color.bold.yellow('Bionformatics I'))
-    log(color.bold.yellow('Albert-Ludwigs-Universität Freiburg'))
-    log(color.bold.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'))
-    log('')
+    log('');
+    log(color.yellow('WS 2021/2022'));
+    log(color.bold.yellow('Bionformatics I'));
+    log(color.bold.yellow('Albert-Ludwigs-Universität Freiburg'));
+    log(color.bold.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'));
+    log('');
     
     for (const test of tests) {
         try {
@@ -11451,11 +11451,11 @@ exports.runAll = async (tests, cwd) => {
     }
     // Restart command processing
     if (failed) {
-        log('')
-        log(color.yellow('If you have doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
+        log('');
+        log(color.yellow('If you have doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'));
     }
     else {
-        log('')
+        log('');
         log(color.bold.yellow('All tests passed, congratulations!'));
     }
     // Set the number of points
