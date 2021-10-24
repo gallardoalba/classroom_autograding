@@ -11424,10 +11424,10 @@ exports.runAll = async (tests, cwd) => {
     const token = uuid_1.v4();
     let failed = false;
     log('')
-    log(color.yellow('WS 2021/2022'))
-    log(color.yellow('Bionformatics I'))
-    log(color.yellow('Albert-Ludwigs-Universität Freiburg'))
-    log(color.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'))
+    log(color.bold.yellow('WS 2021/2022'))
+    log(color.bold.yellow('Bionformatics I'))
+    log(color.bold.yellow('Albert-Ludwigs-Universität Freiburg'))
+    log(color.bold.yellow('Lehrstuhl für Bioinformatik - Institut für Informatik'))
     log('')
     
     for (const test of tests) {
@@ -11451,17 +11451,19 @@ exports.runAll = async (tests, cwd) => {
     }
     // Restart command processing
     if (failed) {
-        log(color.green('It seems that you need to study a bit more.'));
+        log('')
+        log(color.yellow('It seems that you need to study a bit more.'));
         log(color.yellow('If you have any doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'))
     }
     else {
-        log(color.green('All tests passed, congratulations!'));
+        log('')
+        log(color.bold.yellow('All tests passed, congratulations!'));
     }
     // Set the number of points
     if (hasPoints) {
         const text = `Points ${points}/${availablePoints}`;
         log('')
-        log(color.bold.bgCyan.black(text));
+        log(color.bold.bgWhite.black(text));
         core.setOutput('Points', `${points}/${availablePoints}`);
         await output_1.setCheckRunOutput(text);
     }
