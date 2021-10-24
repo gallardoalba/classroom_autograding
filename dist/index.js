@@ -11320,7 +11320,7 @@ const waitForExit = async (child, timeout) => {
             }
             else {
                 //reject(new TestError(`Error: Exit with code: ${code} and signal: ${signal}`));
-                reject('You failed some tests!'));
+                reject('You failed some tests!');
             }
         });
         child.once('error', (error) => {
