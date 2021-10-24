@@ -11438,14 +11438,14 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log(color.green(`[+] Correct!`));
+            log(color.green(`[+]-[Correct]`));
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log(color.red(`[-] Incorrect`));
+            log(color.red(`[-]-[Incorrect]`));
             core.setFailed(error.message);
         }
     }
@@ -11468,7 +11468,7 @@ exports.runAll = async (tests, cwd) => {
     }
     log("")
     log(color.yellow("Nothing makes sense except in the light of evolution."))
-    log(color.yellow("\t-- Francisco José Ayala Pereda (1934-)"))
+    log(color.yellow("\t-- Francisco José Ayala Pereda (1934-present)"))
     log("")
 };
 
