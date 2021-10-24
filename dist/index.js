@@ -11449,6 +11449,16 @@ exports.runAll = async (tests, cwd) => {
             core.setFailed(error.message);
         }
     }
+
+    // Set the number of points
+    if (hasPoints) {
+        const text = `\tFinal grade: ${points}/${availablePoints}\t`;
+        log('')
+        log(color.bold.bgWhite.black(text));
+        core.setOutput('Points', `${points}/${availablePoints}`);
+        await output_1.setCheckRunOutput(text);
+    }
+    
     // Restart command processing
     if (failed) {
         log('');
@@ -11458,14 +11468,7 @@ exports.runAll = async (tests, cwd) => {
         log('');
         log(color.bold.yellow('[o] All tests passed, congratulations!'));
     }
-    // Set the number of points
-    if (hasPoints) {
-        const text = `\tFinal grade: ${points}/${availablePoints}\t`;
-        log('')
-        log(color.bold.bgWhite.black(text));
-        core.setOutput('Points', `${points}/${availablePoints}`);
-        await output_1.setCheckRunOutput(text);
-    }
+
     log("")
     log(color.yellow("Nothing makes sense except in the light of evolution."))
     log(color.yellow("\t-- Francisco José Ayala Pereda (1934-present)"))
