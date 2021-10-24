@@ -11467,8 +11467,8 @@ exports.runAll = async (tests, cwd) => {
         await output_1.setCheckRunOutput(text);
     }
     log("")
-    log(color.yellow("The dogmatist within is always worse than the enemy without."))
-    log(color.yellow("\t-- Stephen Jay-Gould (September 10, 1941 – May 20, 2002)"))
+    log(color.yellow("Nothing makes sense except in the light of evolution."))
+    log(color.yellow("\t-- Francisco José Ayala Pereda (1934-)"))
     log("")
 };
 
