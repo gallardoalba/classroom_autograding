@@ -11470,7 +11470,7 @@ exports.runAll = async (tests, cwd) => {
     }
 
     log("")
-    log(color.yellow("Nothing in Biology Makes Sense Except in the Light of Evolution."))
+    log(color.yellow("Nothing in biology makes sense except in the light of evolution."))
     log(color.yellow("\t-- Theodosius Dobzhansky (1900-1975)"))
     log("")
 };
