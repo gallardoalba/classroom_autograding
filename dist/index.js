@@ -11436,7 +11436,7 @@ exports.runAll = async (tests, cwd) => {
                 hasPoints = true;
                 availablePoints += test.points;
             }
-            log(`[x] ${test.name}`);
+            log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
             log(color.green(`[+] Correct`));
             if (test.points) {
