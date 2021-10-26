@@ -11368,7 +11368,7 @@ const runCommand = async (test, cwd, timeout) => {
     // Start with a single new line
     //process.stdout.write(indent('\n'));
     child.stdout.on('data', chunk => {
-        process.stdout.write(indent(chunk));
+        process.stdout.write(indent(chunk);
         output += chunk;
     });
     //process.stdout.write(indent('\n'));
