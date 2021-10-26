@@ -11370,8 +11370,8 @@ const runCommand = async (test, cwd, timeout) => {
     child.stdout.on('data', chunk => {
         process.stdout.write(indent(chunk));
         output += chunk;
-    //process.stdout.write(indent('\n'));
-    //});
+    });
+    process.stdout.write(indent('\n'));
     child.stderr.on('data', chunk => {
         process.stderr.write(indent(chunk));
     });
