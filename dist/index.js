@@ -11453,7 +11453,7 @@ exports.runAll = async (tests, cwd) => {
 
     // Set the number of points
     if (hasPoints) {
-        const text = `\tFinal grade: ${points}/${availablePoints}\t`;
+        const text = `\t\t\tFinal grade: ${points}/${availablePoints}\t\t\t`;
         log('')
         log(color.bold.bgWhite.black(text));
         core.setOutput('Points', `${points}/${availablePoints}`);
