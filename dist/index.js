@@ -11437,16 +11437,16 @@ exports.runAll = async (tests, cwd) => {
                 hasPoints = true;
                 availablePoints += test.points;
             }
-            log(color.cyan(`[x] ${test.name}`));
+            log(color.bold.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log(color.green(`[+] Correct`));
+            log(color.bold.green(`[+] Correct`));
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log(color.red(`[-] Incorrect`));
+            log(color.bold.red(`[-] Incorrect`));
             core.setFailed(error.message);
         }
     }
