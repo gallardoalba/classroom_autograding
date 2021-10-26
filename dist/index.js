@@ -11366,10 +11366,11 @@ const runCommand = async (test, cwd, timeout) => {
     });
     let output = '';
     // Start with a single new line
-    //process.stdout.write(indent('\n'));
-    //child.stdout.on('data', chunk => {
-    //    process.stdout.write(indent(chunk));
-    //    output += chunk;
+    process.stdout.write(indent('\n'));
+    child.stdout.on('data', chunk => {
+        process.stdout.write(indent(chunk));
+        output += chunk;
+    process.stdout.write(indent('\n'));
     //});
     child.stderr.on('data', chunk => {
         process.stderr.write(indent(chunk));
