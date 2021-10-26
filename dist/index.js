@@ -11439,18 +11439,14 @@ exports.runAll = async (tests, cwd) => {
             }
             log(color.cyan(`[x] ${test.name}`));
             await exports.run(test, cwd);
-            log('')
             log(color.green(`[+] Correct`));
-            log('')
             if (test.points) {
                 points += test.points;
             }
         }
         catch (error) {
             failed = true;
-            log('')
             log(color.red(`[-] Incorrect`));
-            log('')
             core.setFailed(error.message);
         }
     }
