@@ -11371,9 +11371,9 @@ const runCommand = async (test, cwd, timeout) => {
         process.stdout.write(indent(chunk));
         output += chunk;
     });
-    //child.stderr.on('data', chunk => {
-    //    process.stderr.write(indent(chunk));
-    //});
+    child.stderr.on('data', chunk => {
+        process.stderr.write(indent(chunk));
+    });
     // Preload the inputs
     if (test.input && test.input !== '') {
         child.stdin.write(test.input);
