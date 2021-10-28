@@ -11463,11 +11463,11 @@ exports.runAll = async (tests, cwd) => {
     // Restart command processing
     if (failed) {
         log('');
-        log(color.yellow('If you have doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'));
+        log(color.bold.yellow('If you have doubts about any of the exercises, we recommend you to participate in the Q&A sessions!'));
     }
     else {
         log('');
-        log(color.bold.yellow('[o] All tests passed, congratulations!'));
+        log(color.bold.yellow('All tests passed, congratulations!'));
     }
 
     log("")
